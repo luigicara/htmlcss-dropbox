@@ -21,10 +21,10 @@ nav {
     left: 0;
     z-index: 9999;
     background-color: white;
-    overflow: hidden;
+    border-bottom: 1px ridge rgb(199, 199, 199);
 }
 
-nav ul {
+.menu {
     list-style: none;
     display: flex;
     align-items: center;
@@ -34,6 +34,10 @@ nav ul {
 .nav-left {
     display: flex;
     align-items: center;
+}
+
+.nav-right {
+    position: relative;
 }
 
 nav img {
@@ -46,10 +50,50 @@ nav li {
     margin: 0 20px;
 }
 
+.voice {
+    display: inline-block;
+    height: 100%;
+}
+
+.menu li:hover .voice {
+    border-bottom: 3px solid black;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    line-height: 2;
+}
+
+.dropdown a {
+    display: block;
+    color: black;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 0 15px;
+    margin: 10px 0;
+}
+
+.menu li:hover .dropdown {
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: rgb(231, 231, 231);
+}
+
 #inizia {
     background-color: #0061ff;
     color: white;
     padding: 5px 15px;
+}
+
+.menu li:hover #inizia {
+    background-color: #4385ee;
 }
 
 .nav-right li:last-child {
@@ -98,6 +142,10 @@ h1 {
     text-decoration: none;
     color: white;
     background-color: #0061ff;
+}
+
+.btn:hover {
+    background-color: #4385ee;
 }
 
 #downward-arrow {
@@ -240,6 +288,10 @@ h3 {
 
 .buy-now > a {
     color:#0061ff;
+}
+
+.buy-now > a:hover {
+    text-decoration: none;
 }
 
 .spacer {
@@ -473,11 +525,75 @@ h3 {
 }
 
 /* section #faq */
-.question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    border-top: 1px ridge gray;
+#faq .container {
+    margin: 150px auto;
     border-bottom: 1px ridge gray;
+}
+
+.question {
+    border-top: 1px ridge gray;
+}
+
+.question:hover .accordion {
+    display: block;
+}
+
+.question:hover .symbol::before {
+    content: "\f077";
+}
+
+.line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30%;
+    height: 100px;
+}
+
+.symbol::before {
+    content: "\f078";
+    font-family: FontAwesome;
+    font-size: small;
+}
+
+.accordion {
+    display: none;
+    padding-bottom: 40px;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 570px;
+    background-color: black;
+}
+
+#contacts {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5%;
+    padding: 85px 0 100px 0;
+}
+
+.container-footer {
+    width: 1250px;
+    margin: 0 auto;
+}
+
+.container-footer ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+    line-height: 2.5;
+    width: calc(80% / 5);
+}
+
+.language {
+    width: 10%;
+    height: 110px;
+    line-height: 110px;
+    border-top: 1px solid white;
+    color: gray;
 }
